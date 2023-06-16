@@ -1,9 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
-#include <stdlib.h>
-/* more headers goes there */
+#include <stdio.h>
 
-/* betty style doc for function main goes there */
+
 /**
  * main - "main block
  * description: get a random number and print number"
@@ -18,10 +17,16 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 if (n > 0)
-	printf("%i is positive\n", n);
-else if (n < 0)
-	printf("%i is negative\n", n);
+{
+	printf("%d is positive\n", n);
+}
+	else if (n == 0)
+{
+	printf("%d is zero\n", n);
+}
 else
-	printf("%i is zero\n", n);
+{
+	printf("%d is negative\n", n);
 	return (0);
+}
 }
