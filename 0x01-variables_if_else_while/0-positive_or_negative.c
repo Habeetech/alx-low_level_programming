@@ -4,8 +4,8 @@
 
 
 /**
- * main - "main block
- * description: get a random number and print number"
+ * main - Entry point
+ * description: "get a random number and print number"
  * Return: 0 "always return zero"
  */
 
