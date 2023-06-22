@@ -1,39 +1,24 @@
 #include "main.h"
-
 /**
- * print_number - prints an integer
- * @n: the integer to be printed
- * Return: None
- */
-
+* print_number - prints an integer
+* @n: integer to be printed
+*/
 void print_number(int n)
 {
-	int reverse = 0;
-        int digit;
+	unsigned int n1;
 
-	if (n == 0)
-	{
-	_putchar('0');
-
-	return;
-	}
 	if (n < 0)
 	{
+		n1 = -n;
 		_putchar('-');
-		n = -n;
 	}
-
-	while (n != 0)
+	else
 	{
-		digit = n % 10;
-		reverse = reverse * 10 + digit;
-		n /= 10;
+		n1 = n;
 	}
-
-	while (reverse != 0)
+	if (n1 / 10)
 	{
-		digit = reverse % 10;
-		_putchar('0' + digit);
-		reverse /= 10;
+		print_number(n1 / 10);
 	}
+	_putchar((n1 % 10) + '0');
 }
