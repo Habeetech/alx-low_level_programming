@@ -5,23 +5,20 @@
  * @size: size of the triangle
  * Return: None
  */
-
 void print_triangle(int size)
 {
+	int i, j;
+
 	if (size <= 0)
 	{
 		_putchar('\n');
+		return;
 	}
-	else
+	for (i = 0; i < size; i++)
 	{
-		int n, m;
-
-		for (n = 1; n <= size; n++)
+		for (j = 0; j <= i; j++)
 		{
-			for (m = 1; m <= n; m++)
-			{
-				_putchar('#');
-			}
+			_putchar('#');
 		}
 		_putchar('\n');
 	}
