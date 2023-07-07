@@ -1,25 +1,18 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * print_arg - prints all argument it recieves
- * one argument per line
- * ending with a new line
+ * main - prints all the args content
  * @argc: argument count
- * @argv: argument variable
- * Return: Always 0
+ * @argv: argument vector
+ * Return: Always zero
  */
-
-int print_arg(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	int i, j;
+	int i;
 
 	for (i = 0; i < argc; i++)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
-		{
-			_putchar(argv[i][j]);
-		}
-		_putchar('\n');
+		printf("%s\n", argv[i]);
 	}
 	return (0);
 }
