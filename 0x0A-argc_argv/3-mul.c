@@ -1,55 +1,26 @@
 #include "main.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * charToInt - coverts to int
- * mul - prints result of a multiplication
- * followed by a newline
- * @str: string to takes care of input
- * Return: 1 if argument isn't two int
- * and print error followed by a new line
+ * main - prints the multiplication of two args numbers
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: Always zero
  */
-int charToInt(char *str)
+int main(int argc, char *argv[])
 {
-	int result = 0;
-	int sign = 1;
-	int i = 0;
+	int n1 = 0, n2 = 0;
 
-	if (str[0] == '-')
+	if (argc == 3)
 	{
-		sign = -1;
-		i = 1;
+		n1 = atoi(argv[1]);
+		n2 = atoi(argv[2]);
+		printf("%d\n", n1 *n2);
 	}
-
-	while (str[i] != '\0')
+	else
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-		{
-			result = result * 10 + (str[i] - '0');
-			i++;
-		}
-		else
-		{
-			return (0);
-		}
-	}
-	return (result * sign);
-}
-/* mul - prints product of a and b */
-int mul(char *argv[], int *prod)
-{
-	int a = charToInt(argv[0]);
-	int b = charToInt(argv[1]);
-
-	if (a == 0 || b == 0)
-	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
+		printf("Error\n");
 		return (1);
 	}
-	*prod = a * b;
-	_putchar(*prod);
 	return (0);
 }
