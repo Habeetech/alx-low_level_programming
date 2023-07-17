@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "dog.h"
-/**
- * new_dog - a function that creates a new dog
- * @name: name of the dog
- * @age: age of the dog
- * @owner: owner of the dog
- * Return: None
- */
 
+/**
+ * new_dog - function that creates a new dog.
+ * @name: The name of the dog.
+ * @age: The age of the dog.
+ * @owner: The owner of the dog
+ * Return: Pointer to the created dog structure.
+ * Returns NULL if memory allocation fails.
+ */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d = malloc(sizeof(dog_t));
@@ -17,8 +19,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	d->name = name;
+	d->name = malloc(strlen(name) + 1);
+	d->owner = malloc(strlen(owner) + 1);
+	if (d->name == NULL || d->owner == NULL)
+	{
+		free(d->name);
+		free(d->owner);
+		free(d);
+		return (NULL);
+	}
+	strcpy(d->name, name);
+	strcpy(d->owner, owner);
 	d->age = age;
-	d->owner = owner;
 	return (d);
 }
