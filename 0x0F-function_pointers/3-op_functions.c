@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "3-calc.h"
 /**
  * op_mod - modulus two integers
  * @a: first integer
